@@ -1,0 +1,45 @@
+version: '3.8'
+
+services:
+  # Web 前端开发服务
+  web:
+    image: node:18
+    working_dir: /app
+    volumes:
+      - ./web-ui:/app
+    ports:
+      - "3000:3000"
+    command: sh -c "npm install && npm run dev"
+    environment:
+      - NODE_ENV=development
+
+  # API 网关服务
+  api:
+    image: node:18
+    working_dir: /app
+    volumes:
+      - ./api-gateway:/app
+    ports:
+      - "4000:4000"
+    command: sh -c "npm install && npm run dev"
+    environment:
+      - NODE_ENV=development
+
+  # Dify 核心服务
+  dify:
+    image: langgenius/dify-web:latest
+    ports:
+      - "5000:5000"
+    environment:
+      - DIFY_API_KEY=your_api_key_here
+
+  # MongoDB 数据库
+  mongo:
+    image: mongo:latest
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongodb_data:/data/db
+
+volumes:
+  mongodb_data:

@@ -1,0 +1,31 @@
+{
+  "name": "ai-workflow-assistant-mobile",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "start": "react-native start",
+    "android": "react-native run-android",
+    "ios": "react-native run-ios",
+    "test": "jest",
+    "lint": "eslint ."
+  },
+  "dependencies": {
+    "react": "18.2.0",
+    "react-native": "0.72.7",
+    "react-native-paper": "^5.11.1",
+    "react-native-vector-icons": "^10.0.2",
+    "react-native-safe-area-context": "^4.7.4",
+    "react-native-screens": "^3.27.0",
+    "@react-navigation/native": "^6.1.9",
+    "@react-navigation/native-stack": "^6.9.17",
+    "dify-client": "^0.1.8"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.23.3",
+    "@babel/runtime": "^7.23.3",
+    "@react-native-community/eslint-config": "^3.2.0",
+    "@types/react-native": "^0.72.7",
+    "metro-react-native-babel-preset": "^0.77.0",
+    "typescript": "^5.2.2"
+  }
+}
